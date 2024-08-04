@@ -1,0 +1,466 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    color: #333;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.cabecera-izquierda h1 {
+    margin: 0;
+    color: #55bef5;
+}
+
+.cabecera-izquierda p {
+    margin: 0;
+    color: #666;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+            nav ul li a:hover {
+                color:#55bef5;/*color base proyecto*/
+            }
+
+.cabecera-derecha .boton-notificacion {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.boton-logo {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    position: relative;
+}
+
+.seccion-formulario {
+    flex: 1;
+    position: relative;
+}
+
+
+.tarjeta-formulario {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: relative;
+}
+
+.tarjeta-formulario-login {
+    background: #fff;
+    padding: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: relative;
+}
+
+.tarjeta-formulario h2 {
+    font-size: 42px;
+    color: #000000;
+}
+
+.tarjeta-formulario-login h2 {
+    font-size: 42px;
+    color: #000000;
+}
+
+.fuente-delgada {
+    font-weight: 100;
+    color: black;
+}
+
+.fuente-gruesa {
+    color: #55bef5;
+}
+
+.fuente-gigante {
+    font-weight: 200;
+    color: black;
+    font-size: 90px;
+    margin-right: 220px;
+}
+
+.fuente-morada {
+    color: #55bef5;
+}
+
+.activo {
+    color: #55bef5;
+    font-weight: 700;
+}
+
+.tarjeta-formulario p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.Division-elementos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-elementos {
+    display: flex;
+    flex-direction: column;
+}
+
+.entradas-horario {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .entradas-horario div {
+        flex: 1;
+    }
+
+        .entradas-horario div:first-child {
+            margin-right: 10px;
+        }
+
+.button {
+    border-radius: 5px;
+    background: #55bef5;
+    border: 3px solid #55bef5; /* Color de borde */
+    color: #fff; /* Color de texto */
+    font-weight: 600;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+    .button:hover {
+        background-color: #55bef5;
+        color: #ffff;
+        text-shadow: 0px 0px 0px #000000;
+    }
+
+.button-blanco {
+    border-radius: 5px;
+    background: #eeeeee;
+    border: 3px solid #eeeeee; /* Color de borde */
+    color: #55bef5; /* Color de texto */
+    font-weight: 600;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .button-blanco:hover {
+        background-color: #cecdcd;
+        color: #55bef5;
+    }
+
+.seccion-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+    .seccion-imagen img {
+        position: relative;
+        max-width: 100%;
+        height: 580px;
+    }
+
+.seccion-imagen-izquierda {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Alinea la imagen a la izquierda */
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.seccion-imagen img-izquierda {
+    max-width: 100%;
+    height: 580px;
+    position: relative;
+}
+
+.footer {
+    background-color: #2B3238;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.footer__container_copyright div {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    overflow-wrap: break-word; /* Rompe palabras largas si no caben en una línea */
+    max-width: 600px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .calendar-header button {
+        background-color: #45539D;
+        color: white;
+        border: none;
+        padding: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .calendar-header h3 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+    .calendar div {
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .calendar .header {
+        background-color: #e9e9e9;
+        font-weight: bold;
+        padding: 15px 0;
+    }
+
+    .calendar .day {
+        background-color: #ffffff;
+        transition: background-color 0.3s;
+    }
+
+    .calendar .free-day {
+        background-color: #45539D;
+        color: white;
+        transition: background-color 0.3s;
+    }
+
+    .calendar .day:hover {
+        background-color: #5f74d9;
+    }
+
+    .calendar .free-day:hover {
+        background-color: #5f74d9;
+    }
+
+.calendar-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+    .calendar-footer span {
+        background-color: #45539D;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+.marcas-contenedor {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5rem;
+    border-radius: 8px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.clock-icon {
+    width: 400px;
+    height: 400px;
+}
+
+.info {
+    font-size: 1.5em;
+    padding: 0 0 0 300px; /* top, right, bottom, left */
+}
+
+    .info h2 {
+        color: #55bef5;
+    }
+
+    .info p {
+        margin-top: 10px; /* Añadir espacio entre párrafos */
+    }
+
+.inicioSesion {
+    border: none;
+    border-bottom: 3px solid;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+    .inicioSesion:focus {
+        border-bottom-color: #5E58F8;
+    }
+
+.boton-logo {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .boton-logo img {
+        width: 130px;
+        height: 70px;
+    }
+
+
+.tag-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .tag-list li {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: #333;
+        border-radius: 5px;
+    }
+
+        .tag-list li a {
+            text-decoration: none;
+            color: white;
+        }
+
+.container-menu {
+    background-color: #55bef5;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.header-menu {
+    margin-bottom: 50px;
+}
+
+.options-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.option-menu {
+    width: 30%;
+    margin: 10px 0;
+}
+
+.option img {
+    width: 50px;
+    height: 50px;
+}
