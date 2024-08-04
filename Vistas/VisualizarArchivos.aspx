@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VisualizarArchivos.aspx.cs" Inherits="GAE.Vistas.VisualizarArchivos" %>--%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VisualizarArchivos.aspx.cs" Inherits="GAE.Vistas.VisualizarArchivos" %>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -119,6 +119,7 @@
                 <div class="tarjeta-formulario">
                     <h2>Carpeta</h2>
                     <asp:DropDownList ID="ddlDepartamento" runat="server"></asp:DropDownList>
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar archivos de carpeta" />
                 </div>
                 <div class="table-container">
                     <asp:GridView ID="gvArchivos" runat="server" AutoGenerateColumns="False" CssClass="table">
@@ -143,8 +144,7 @@
         </div>
         <footer class="footer">
             <div>
-                <h3>Sobre Nosotros</h3>
-                <p>"Este gestor de archivos nos ofrece la gestión eficiente de archivos dentro de la empresa. Este software está diseñado para optimizar y mejorar la organización empresarial."</p>
+                <h3>Sobre Nosotros            <p>"Este gestor de archivos nos ofrece la gestión eficiente de archivos dentro de la empresa. Este software está diseñado para optimizar y mejorar la organización empresarial."</p>
             </div>
             <div>
                 <h3>Tags</h3>

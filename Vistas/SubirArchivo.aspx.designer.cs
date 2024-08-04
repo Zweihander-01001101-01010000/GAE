@@ -33,13 +33,13 @@ namespace GAE.Vistas
         protected global::System.Web.UI.WebControls.Label lblNombre;
 
         /// <summary>
-        /// Control horaInicio.
+        /// Control idNombreArchivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox horaInicio;
+        protected global::System.Web.UI.WebControls.TextBox idNombreArchivo;
 
         /// <summary>
         /// Control fileUpload.
@@ -87,13 +87,13 @@ namespace GAE.Vistas
         protected global::System.Web.UI.WebControls.TextBox descripcion;
 
         /// <summary>
-        /// Control ddlDepartamento.
+        /// Control idCarpeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDepartamento;
+        protected global::System.Web.UI.WebControls.DropDownList idCarpeta;
 
         /// <summary>
         /// Control submit.

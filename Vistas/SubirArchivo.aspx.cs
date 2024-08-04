@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.IO;
 using System.Web;
 using System.Web.UI;
@@ -11,10 +12,36 @@ namespace GAE.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                CargarCarpetas();
+            }
         }
 
-        protected void submit_Click(object sender, EventArgs e)
+        private void CargarCarpetas()
+        {
+            string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT carpeta FROM carpetas", con);
+                try
+                {
+                    con.Open();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    idCarpeta.DataSource = reader;
+                    idCarpeta.DataTextField = "carpeta";
+                    idCarpeta.DataValueField = "carpeta";
+                    idCarpeta.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
+
+
+            protected void submit_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("submit_Click event triggered.");
         }
@@ -26,26 +53,27 @@ namespace GAE.Vistas
             {
                 try
                 {
-                    // Obtén el archivo y su extensión
                     HttpPostedFile archivo = fileUpload.PostedFile;
-                    string nombreArchivo = Path.GetFileName(archivo.FileName);
-                    string formatoArchivo = Path.GetExtension(nombreArchivo).Replace(".", "");
+                    string nombreArchivo = idNombreArchivo.Text;
+                    string formatoArchivo = Path.GetExtension(archivo.FileName).Replace(".", ""); // Cambiado para obtener la extensión del archivo subido
                     byte[] contenidoArchivo = new byte[archivo.ContentLength];
                     archivo.InputStream.Read(contenidoArchivo, 0, archivo.ContentLength);
 
-                    System.Diagnostics.Debug.WriteLine("File read successfully.");
+                    System.Diagnostics.Debug.WriteLine("File read successfully. Nombre: " + nombreArchivo + ", Formato: " + formatoArchivo);
 
-                    // Obtén otros valores del formulario
                     string descripcion1 = descripcion.Text;
-                    descripcion.Text = " ";
-                    horaInicio.Text = " ";
+                    string CarpetaSeleccionada = idCarpeta.SelectedItem.Text;
 
-                    // Llama al método para guardar en la base de datos
-                    GuardarArchivo(nombreArchivo, contenidoArchivo, formatoArchivo, descripcion1);
+                    // Llamada al método para guardar en la base de datos
+                    GuardarArchivo(nombreArchivo, contenidoArchivo, formatoArchivo, descripcion1, CarpetaSeleccionada);
 
                     lblMensaje.Text = "Archivo subido con éxito.";
                     lblMensaje.Visible = true;
                     System.Diagnostics.Debug.WriteLine("File uploaded successfully.");
+
+                    // Limpiar los campos del formulario
+                    descripcion.Text = "";
+                    idNombreArchivo.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -62,9 +90,8 @@ namespace GAE.Vistas
             }
         }
 
-        private void GuardarArchivo(string nombreArchivo, byte[] contenidoArchivo, string formatoArchivo, string descripcion1)
+        private void GuardarArchivo(string nombreArchivo, byte[] contenidoArchivo, string formatoArchivo, string descripcion1, string CarpetaSeleccionada)
         {
-            // Define la cadena de conexión aquí
             string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
 
             try
@@ -73,12 +100,13 @@ namespace GAE.Vistas
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO archivos (nombre_Archivo, formato_archivo, descripcion, archivo) VALUES (@nombre_archivo, @formato_archivo, @descripcion, @archivo)";
+                    string query = "INSERT INTO archivos (nombre_archivo, formato_archivo, descripcion, archivo, carpeta) VALUES (@nombre_archivo, @formato_archivo, @descripcion, @archivo, @carpeta)";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@nombre_archivo", nombreArchivo);
                     command.Parameters.AddWithValue("@formato_archivo", formatoArchivo);
                     command.Parameters.AddWithValue("@descripcion", descripcion1);
                     command.Parameters.AddWithValue("@archivo", contenidoArchivo);
+                    command.Parameters.AddWithValue("@carpeta", CarpetaSeleccionada);
 
                     command.ExecuteNonQuery();
 

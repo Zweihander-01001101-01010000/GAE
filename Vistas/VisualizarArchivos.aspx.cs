@@ -16,9 +16,33 @@ namespace GAE.Vistas
             if (!IsPostBack)
             {
                 CargarArchivos();
+                CargarCarpetas();
             }
         }
 
+        private void CargarCarpetas()
+        {
+            string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT carpeta FROM carpetas", con);
+                try
+                {
+                    con.Open();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    ddlDepartamento.DataSource = reader;
+                    ddlDepartamento.DataTextField = "carpeta";
+                    ddlDepartamento.DataValueField = "carpeta";
+                    ddlDepartamento.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
+
+        
         private void CargarArchivos()
         {
             string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
@@ -36,5 +60,31 @@ namespace GAE.Vistas
                 gvArchivos.DataBind();
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string CarpetaSeleccionada = ddlDepartamento.SelectedItem.Text;
+
+          
+            string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
+
+            string query = "SELECT nombre_Archivo, archivo, formato_archivo, descripcion FROM archivos WHERE carpeta = @CarpetaSeleccionada";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+             
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@CarpetaSeleccionada", CarpetaSeleccionada);
+
+                connection.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                gvArchivos.DataSource = dataTable;
+                gvArchivos.DataBind();
+            }
+        }
+
     }
 }

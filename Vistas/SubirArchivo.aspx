@@ -136,7 +136,7 @@
                     <div class="entradas-horario">
                         <div>
                             <label class="fuente-morada" for="hora-inicio">Nombre del archivo</label>
-                            <asp:TextBox ID="horaInicio" runat="server" placeholder="Ej. 30/06/2024"></asp:TextBox>
+                            <asp:TextBox ID="idNombreArchivo" runat="server" placeholder="Ej. 30/06/2024"></asp:TextBox>
                         </div>
                         <div>
                             <label class="fuente-morada" for="hora-inicio">Subir un archivo</label>
@@ -158,7 +158,7 @@
                     <asp:TextBox ID="descripcion" TextMode="MultiLine" runat="server" placeholder="Ingresa la descripción del archivo."></asp:TextBox>
                      <br/>
                      <label class="fuente-morada" for="hora-inicio">Carpeta</label>
-                     <asp:DropDownList ID="ddlDepartamento" runat="server"></asp:DropDownList>
+                     <asp:DropDownList ID="idCarpeta" runat="server"></asp:DropDownList>
                      <br/>
                     <br />
                     <asp:Button ID="submit" runat="server" Text="Enviar" CssClass="button" OnClick="submit_Click"/>
