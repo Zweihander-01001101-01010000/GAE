@@ -161,7 +161,6 @@
                      <asp:DropDownList ID="idCarpeta" runat="server"></asp:DropDownList>
                      <br/>
                     <br />
-                    <asp:Button ID="submit" runat="server" Text="Enviar" CssClass="button" OnClick="submit_Click"/>
                     <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
                 </div>
             </section>

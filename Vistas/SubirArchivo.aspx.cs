@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.IO;
 using System.Web;
 using System.Web.UI;
@@ -40,12 +39,6 @@ namespace GAE.Vistas
             }
         }
 
-
-            protected void submit_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine("submit_Click event triggered.");
-        }
-
         protected void btnSubir_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("btnSubir_Click event triggered.");
@@ -55,7 +48,7 @@ namespace GAE.Vistas
                 {
                     HttpPostedFile archivo = fileUpload.PostedFile;
                     string nombreArchivo = idNombreArchivo.Text;
-                    string formatoArchivo = Path.GetExtension(archivo.FileName).Replace(".", ""); // Cambiado para obtener la extensión del archivo subido
+                    string formatoArchivo = Path.GetExtension(archivo.FileName).Replace(".", ""); // Ajuste aquí
                     byte[] contenidoArchivo = new byte[archivo.ContentLength];
                     archivo.InputStream.Read(contenidoArchivo, 0, archivo.ContentLength);
 
@@ -113,6 +106,7 @@ namespace GAE.Vistas
                     System.Diagnostics.Debug.WriteLine("File saved to database successfully.");
                 }
             }
+
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error saving file to database: " + ex.Message);
