@@ -156,6 +156,10 @@
 
                     <label class="fuente-morada" for="motivo">Descripcion</label>
                     <asp:TextBox ID="descripcion" TextMode="MultiLine" runat="server" placeholder="Ingresa la descripción del archivo."></asp:TextBox>
+                     <br/>
+                     <label class="fuente-morada" for="hora-inicio">Carpeta</label>
+                     <asp:DropDownList ID="ddlDepartamento" runat="server"></asp:DropDownList>
+                     <br/>
                     <br />
                     <asp:Button ID="submit" runat="server" Text="Enviar" CssClass="button" OnClick="submit_Click"/>
                     <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
