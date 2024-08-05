@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Solicitar Vacaciones</title>
+     <title>Subir archivos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="../../Estilos/app.css" type="text/css" rel="stylesheet"/>
     <style>
@@ -106,7 +106,7 @@
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <header>
             <div class="cabecera-izquierda">
-                <h1>Jefatura</h1>
+                <h1><a href="MenuJefatura.aspx">Jefatura</a></h1>
                 <p><asp:Label ID="lblNombre" runat="server" Text="Esteban Mata Mena"></asp:Label></p>
             </div>
             <nav>
@@ -136,7 +136,7 @@
                     <div class="entradas-horario">
                         <div>
                             <label class="fuente-morada" for="hora-inicio">Nombre del archivo</label>
-                            <asp:TextBox ID="idNombreArchivo" runat="server" placeholder="Ej. 30/06/2024"></asp:TextBox>
+                            <asp:TextBox ID="idNombreArchivo" runat="server" placeholder="Informe 1"></asp:TextBox>
                         </div>
                         <div>
                             <label class="fuente-morada" for="hora-inicio">Subir un archivo</label>

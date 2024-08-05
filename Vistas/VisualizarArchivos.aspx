@@ -94,7 +94,7 @@
     <form id="form1" runat="server">
         <header>
             <div class="cabecera-izquierda">
-                <h1>Jefatura</h1>
+                <h1><a href="MenuJefatura.aspx">Jefatura</a></h1>
                 <p><asp:Label ID="lblNombre" runat="server" Text="Esteban Mata Mena"></asp:Label></p>
             </div>
             <nav>
