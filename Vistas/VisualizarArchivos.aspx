@@ -109,7 +109,7 @@
                         <a href="SubirRespaldo.aspx">Respaldar un archivo.</a>
                     </li>
                     <li class="has-submenu">
-                        <a href="VisualizarArchivos.aspx">Visualizar los archivos respaldado.</a>
+                        <a href="VistaRespaldos.aspx">Visualizar los archivos respaldado.</a>
                     </li>
                 </ul>
             </nav>
@@ -122,18 +122,19 @@
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar archivos de carpeta" />
                 </div>
                 <div class="table-container">
-                    <asp:GridView ID="gvArchivos" runat="server" AutoGenerateColumns="False" CssClass="table">
-                        <Columns>
-                            <asp:BoundField DataField="nombre_Archivo" HeaderText="Nombre de Archivo" />
-                            <asp:TemplateField HeaderText="Archivo">
-                                <ItemTemplate>
-                                    <a href='<%# Eval("archivo", "data:application/octet-stream;base64,{0}") %>' download='<%# Eval("nombre_Archivo") %>'>Descargar</a>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:BoundField DataField="formato_archivo" HeaderText="Formato del archivo" />
-                            <asp:BoundField DataField="descripcion" HeaderText="Descripción del archivo" />
-                        </Columns>
-                    </asp:GridView>
+                   <asp:GridView ID="gvArchivos" runat="server" AutoGenerateColumns="False" CssClass="table">
+                    <Columns>
+                        <asp:BoundField DataField="nombre_Archivo" HeaderText="Nombre de Archivo" />
+                        <asp:TemplateField HeaderText="Archivo">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lnkDownload" runat="server" CommandArgument='<%# Eval("nombre_Archivo") %>' OnClick="DownloadFile">Descargar</asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="formato_archivo" HeaderText="Formato del archivo" />
+                        <asp:BoundField DataField="descripcion" HeaderText="Descripción del archivo" />
+                    </Columns>
+                </asp:GridView>
+
                 </div>
             </section>
         </main>

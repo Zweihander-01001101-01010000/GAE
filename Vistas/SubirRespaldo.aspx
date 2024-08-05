@@ -120,7 +120,7 @@
             <a href="SubirRespaldo.aspx">Respaldar un archivo.</a>
         </li>
         <li class="has-submenu">
-            <a href="VisualizarArchivos.aspx">Visualizar los archivos respaldado.</a>
+            <a href="VistaRespaldos.aspx">Visualizar los archivos respaldado.</a>
         </li>
         </ul>
 </nav>

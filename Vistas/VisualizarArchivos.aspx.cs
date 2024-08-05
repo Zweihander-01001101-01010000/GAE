@@ -61,6 +61,35 @@ namespace GAE.Vistas
             }
         }
 
+        protected void DownloadFile(object sender, EventArgs e)
+        {
+            string nombreArchivo = (sender as LinkButton).CommandArgument;
+            string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
+            string query = "SELECT archivo, formato_archivo FROM archivos WHERE nombre_Archivo = @nombreArchivo";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombreArchivo", nombreArchivo);
+
+                connection.Open();
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        byte[] archivoBytes = (byte[])reader["archivo"];
+                        string formatoArchivo = reader["formato_archivo"].ToString();
+
+                        Response.Clear();
+                        Response.ContentType = "application/octet-stream";
+                        Response.AddHeader("Content-Disposition", $"attachment; filename={nombreArchivo}.{formatoArchivo}");
+                        Response.BinaryWrite(archivoBytes);
+                        Response.End();
+                    }
+                }
+            }
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             string CarpetaSeleccionada = ddlDepartamento.SelectedItem.Text;

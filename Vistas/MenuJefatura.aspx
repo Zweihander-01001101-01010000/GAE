@@ -101,7 +101,7 @@
             <a href="SubirRespaldo.aspx">Respaldar un archivo.</a>
         </li>
         <li class="has-submenu">
-            <a href="VisualizarArchivos.aspx">Visualizar los archivos respaldado.</a>
+            <a href="VistaRespaldos.aspx">Visualizar los archivos respaldado.</a>
         </li>
         </ul>
 </nav>
@@ -128,7 +128,7 @@
                     <p>Puede realizar un respaldo de un archivo deseado.</p>
                 </div>
                 <div class="option-menu full-width">
-                    <a href="VisualizarArchivos.aspx"><img src="../../Imagenes/icono-nube.png" alt="Visualizar Respaldos" /></a>
+                    <a href="VistaRespaldos.aspx"><img src="../../Imagenes/icono-nube.png" alt="Visualizar Respaldos" /></a>
                     <h3>Visualizar Respaldos</h3>
                     <p>Puede ver los respaldos creados en el departamento.</p>
                 </div>
