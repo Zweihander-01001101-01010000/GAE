@@ -120,10 +120,19 @@
                     <h2>Carpeta</h2>
                     <asp:DropDownList ID="ddlDepartamento" runat="server"></asp:DropDownList>
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar archivos de carpeta" />
+
+                    <br />
+                    <br />
                 </div>
                 <div class="table-container">
                    <asp:GridView ID="gvArchivos" runat="server" AutoGenerateColumns="False" CssClass="table">
                     <Columns>
+                         <asp:TemplateField HeaderText="Eliminar">
+                        <ItemTemplate>
+                            <asp:CheckBox ID="chkSelect" runat="server" />
+                            </ItemTemplate>
+                         </asp:TemplateField>
+
                         <asp:BoundField DataField="nombre_Archivo" HeaderText="Nombre de Archivo" />
                         <asp:TemplateField HeaderText="Archivo">
                             <ItemTemplate>
@@ -136,6 +145,8 @@
                         <asp:BoundField DataField="fecha_subida" HeaderText="Fecha de subida" />
                     </Columns>
                 </asp:GridView>
+                    <br /><br />
+                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Seleccionados" OnClick="btnEliminar_Click" />
 
                 </div>
             </section>
