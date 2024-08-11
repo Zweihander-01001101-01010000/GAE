@@ -132,6 +132,9 @@
     <Content Include="Imagenes\planta.png" />
     <Content Include="Imagenes\PulgaresArriba.png" />
     <Content Include="Imagenes\reloj.png" />
+    <Content Include="Vistas\agregarDepartamento.aspx" />
+    <Content Include="Vistas\agregarRoles.aspx" />
+    <Content Include="Vistas\agregarUsuario.aspx" />
     <Content Include="Vistas\DobleFactor.aspx" />
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Vistas\MenuEmpleados.aspx" />
@@ -144,6 +147,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\agregarDepartamento.aspx.cs">
+      <DependentUpon>agregarDepartamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\agregarDepartamento.aspx.designer.cs">
+      <DependentUpon>agregarDepartamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\agregarRoles.aspx.cs">
+      <DependentUpon>agregarRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\agregarRoles.aspx.designer.cs">
+      <DependentUpon>agregarRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\agregarUsuario.aspx.cs">
+      <DependentUpon>agregarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\agregarUsuario.aspx.designer.cs">
+      <DependentUpon>agregarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\DobleFactor.aspx.cs">
       <DependentUpon>DobleFactor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

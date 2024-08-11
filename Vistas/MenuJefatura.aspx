@@ -104,6 +104,19 @@
             <a href="VistaRespaldos.aspx">Visualizar los archivos respaldado.</a>
         </li>
         </ul>
+             <br /><br />
+        <ul>
+            <li class="has-submenu">
+                <a href="agregarDepartamento.aspx">Agregar Departamento</a>
+            </li>
+            <li class="has-submenu">
+                <a href="agregarRoles.aspx">Agregar Roles</a>
+            </li>
+            <li class="has-submenu">
+                <a href="agregarUsuario.aspx">Agregar Usuario</a>
+            </li>
+        </ul>
+
 </nav>
 </header>
         <div class="container-menu">
