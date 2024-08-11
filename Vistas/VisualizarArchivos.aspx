@@ -132,6 +132,8 @@
                         </asp:TemplateField>
                         <asp:BoundField DataField="formato_archivo" HeaderText="Formato del archivo" />
                         <asp:BoundField DataField="descripcion" HeaderText="Descripción del archivo" />
+                        <asp:BoundField DataField="peso_archivo" HeaderText="Peso en MB" />
+                        <asp:BoundField DataField="fecha_subida" HeaderText="Fecha de subida" />
                     </Columns>
                 </asp:GridView>
 

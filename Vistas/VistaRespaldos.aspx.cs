@@ -56,7 +56,7 @@ namespace GAE.Vistas
         private void CargarArchivos(string nombreRespaldo)
         {
             string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
-            string query = "SELECT nombre_archivo, formato_archivo, descripcion FROM respaldoArchivos WHERE NombreRespaldo = @NombreRespaldo";
+            string query = "SELECT nombre_archivo, formato_archivo, descripcion, peso_archivo, fecha_subida FROM respaldoArchivos WHERE NombreRespaldo = @NombreRespaldo";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {

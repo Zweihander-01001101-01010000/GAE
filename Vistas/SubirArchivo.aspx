@@ -162,6 +162,16 @@
                      <br/>
                     <br />
                     <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
+
+                      <br/>
+                     <asp:TextBox ID="txtNombreCarpeta" runat="server" placeholder="Nombre de la nueva carpeta"></asp:TextBox>
+                     <asp:Button ID="btnCrearCarpeta" Text="Crear Carpeta" OnClick="btnCrearCarpeta_Click" runat="server" />
+                     <br/>
+                     <asp:TextBox ID="txtCarpetaEliminar" runat="server" placeholder="Nombre de la carpeta a eliminar"></asp:TextBox>
+                     <asp:Button ID="btnEliminarCarpeta" Text="Eliminar Carpeta" OnClick="btnEliminarCarpeta_Click" runat="server" />
+                    <br />
+
+
                 </div>
             </section>
         </main>

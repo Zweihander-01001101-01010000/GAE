@@ -46,7 +46,7 @@ namespace GAE.Vistas
         private void CargarArchivos()
         {
             string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
-            string query = "SELECT nombre_Archivo, archivo, formato_archivo, descripcion FROM archivos";
+            string query = "SELECT nombre_Archivo, archivo, formato_archivo, descripcion, peso_archivo, fecha_subida FROM archivos";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -97,7 +97,7 @@ namespace GAE.Vistas
           
             string connectionString = "server=localhost;user id=root;password=Josue*10;database=gestordearchivos;port=3306;Connection Timeout=30;charset=utf8;";
 
-            string query = "SELECT nombre_Archivo, archivo, formato_archivo, descripcion FROM archivos WHERE carpeta = @CarpetaSeleccionada";
+            string query = "SELECT nombre_Archivo, archivo, formato_archivo, descripcion, peso_archivo, fecha_subida  FROM archivos WHERE carpeta = @CarpetaSeleccionada";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
